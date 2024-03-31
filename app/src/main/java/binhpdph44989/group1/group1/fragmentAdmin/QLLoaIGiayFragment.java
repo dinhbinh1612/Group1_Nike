@@ -76,7 +76,7 @@ public class QLLoaIGiayFragment extends Fragment implements ItemClick {
     private void showDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        View view = inflater.inflate(R.layout.dialog_them_loai_giay, null);
+        View view = inflater.inflate(R.layout.dialog_loai_giay, null);
         builder.setView(view);
         EditText edtTenLoaiGiay = view.findViewById(R.id.edtTenLoaiGiay);
         Spinner spnTrangThai = view.findViewById(R.id.spnTrangThai);

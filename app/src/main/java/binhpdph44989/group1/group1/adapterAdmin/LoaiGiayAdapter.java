@@ -77,7 +77,7 @@ public class LoaiGiayAdapter extends RecyclerView.Adapter<LoaiGiayAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtMaLoai, txtTenLoai, txtTrangThai;
         ImageView ivEdit;
-        Spinner spnTrangThai;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -91,7 +91,7 @@ public class LoaiGiayAdapter extends RecyclerView.Adapter<LoaiGiayAdapter.ViewHo
     private void showDialog(LoaiGiay loaiGiay) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.dialog_them_loai_giay, null);
+        View view = inflater.inflate(R.layout.dialog_loai_giay, null);
         builder.setView(view);
 
         EditText edtTenLoai = view.findViewById(R.id.edtTenLoaiGiay);

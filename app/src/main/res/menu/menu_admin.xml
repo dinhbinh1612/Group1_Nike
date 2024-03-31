@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/mLoaiGiay"
-        android:title="Quản lý loại giay"
+        android:title="Quản lý loại giày"
         android:icon="@drawable/loaigiay"/>
 
     <item android:id="@+id/mGiay"
@@ -11,7 +11,11 @@
 
     <item android:id="@+id/mThanhVien"
         android:title="Quản lý thành viên"
-        android:icon="@drawable/giohang"/>
+        android:icon="@drawable/thanhvien"/>
+
+    <item android:id="@+id/mDonHang"
+        android:title="Quản lý đơn hàng"
+        android:icon="@drawable/danhsach"/>
 
     <item android:title="Thống kê">
         <menu>
@@ -28,7 +32,7 @@
             <item android:id="@+id/mDoiMatKhau"
                 android:title="Đổi mật khẩu"
                 android:icon="@drawable/key"/>
-            <item android:id="@+id/mThoat"
+            <item android:id="@+id/mDangXuat"
                 android:title="Đăng xuất"
                 android:icon="@drawable/logout"/>
         </menu>
