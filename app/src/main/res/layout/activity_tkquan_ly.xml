@@ -43,6 +43,14 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_marginTop="10dp" />
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="5dp"
+        android:backgroundTint="#CAA3A3"
+        android:src="@drawable/add"
+        android:contentDescription="Thêm mới"/>
 
 </LinearLayout>

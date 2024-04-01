@@ -1,5 +1,6 @@
 package binhpdph44989.group1.group1.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,12 +19,13 @@ public class QuanLyDAO {
 
     public ArrayList<QuanLy> getDSQuanLy() {
         ArrayList<QuanLy> list = new ArrayList<>();
-        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
 
         try {
+            sqLiteDatabase = dbHelper.getReadableDatabase();
             cursor = sqLiteDatabase.query("QUANLY", null, null, null, null, null, null);
-            if (cursor.moveToFirst()) {
+            if (cursor != null && cursor.moveToFirst()) {
                 do {
                     list.add(new QuanLy(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getInt(4)));
                 } while (cursor.moveToNext());
@@ -34,9 +36,24 @@ public class QuanLyDAO {
             if (cursor != null) {
                 cursor.close();
             }
-            sqLiteDatabase.close();
+            if (sqLiteDatabase != null) {
+                sqLiteDatabase.close();
+            }
         }
 
         return list;
+    }
+
+    public boolean capNhatAdmin(int maql, String hoten, String taikhoan, String matkhau) {
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("hoten", hoten);
+        contentValues.put("taikhoan", taikhoan);
+        contentValues.put("matkhau", matkhau);
+
+        int rowsAffected = sqLiteDatabase.update("QUANLY", contentValues, "maql = ?", new String[]{String.valueOf(maql)});
+        sqLiteDatabase.close();
+
+        return rowsAffected > 0;
     }
 }

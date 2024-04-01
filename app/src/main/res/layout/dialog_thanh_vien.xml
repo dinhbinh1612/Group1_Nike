@@ -16,17 +16,34 @@
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"
         android:layout_marginBottom="30dp"/>
-    <EditText
+    <TextView
+        android:background="@drawable/custom_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nhập tên Thành viên"
-        android:id="@+id/edtTenLoaiGiay"
-        android:background="@drawable/custom_edittext"/>
-
-    <Spinner
-        android:background="@drawable/custom_item"
+        android:id="@+id/txtMaQL"/>
+    <EditText
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spnTrangThai"/>
+        android:id="@+id/edtHoTen"
+        android:background="@drawable/custom_edittext"/>
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtTaiKhoan"
+        android:background="@drawable/custom_edittext"/>
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtMatKhau"
+        android:background="@drawable/custom_edittext"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTrangThai"
+        android:background="@drawable/custom_edittext"/>
 </LinearLayout>
