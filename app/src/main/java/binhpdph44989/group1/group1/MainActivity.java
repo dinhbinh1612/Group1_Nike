@@ -10,12 +10,8 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import binhpdph44989.group1.group1.database.DbHelper;
-import binhpdph44989.group1.group1.manHinh.ManDangKy;
 
 public class MainActivity extends AppCompatActivity {
     private EditText edTaiKhoan, edMatKhau;

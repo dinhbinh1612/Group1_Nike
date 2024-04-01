@@ -1,6 +1,5 @@
 package binhpdph44989.group1.group1;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,13 +20,10 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 
 import binhpdph44989.group1.group1.fragmentAdmin.QLDonHangFragment;
-import binhpdph44989.group1.group1.fragmentAdmin.QLGiayFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLLoaIGiayFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLThanhVienFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLThongKeFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLTopFragment;
-import binhpdph44989.group1.group1.manHinh.DoiMatKhau;
-
 
 
 public class TrangChuActivity extends AppCompatActivity {
@@ -61,7 +57,7 @@ public class TrangChuActivity extends AppCompatActivity {
                 if (menuItem.getItemId() == R.id.mLoaiGiay) {
                     fragment = new QLLoaIGiayFragment();
                 }else if (menuItem.getItemId() == R.id.mGiay){
-                    fragment = new QLGiayFragment();
+
                 }else if (menuItem.getItemId() == R.id.mThanhVien){
                     fragment = new QLThanhVienFragment();
                 }else if (menuItem.getItemId() == R.id.mDonHang){
