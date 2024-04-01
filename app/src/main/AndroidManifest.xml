@@ -23,6 +23,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".MainActivityUser"
+            android:exported="false" />
+        <activity
             android:name=".TrangChuActivity"
             android:exported="true">
             <intent-filter>
