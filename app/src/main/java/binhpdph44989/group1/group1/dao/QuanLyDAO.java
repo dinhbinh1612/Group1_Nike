@@ -16,18 +16,27 @@ public class QuanLyDAO {
         dbHelper = new DbHelper(context);
     }
 
-    public ArrayList<QuanLy> getDSQuanLy(){
+    public ArrayList<QuanLy> getDSQuanLy() {
         ArrayList<QuanLy> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT ql.maql, ql.hoten, ql.loaitaikhoan, ql.trangthaitk FROM QUANLY ql", null);
-        if (cursor.getCount() != 0){
-            cursor.moveToFirst();
-            do {
-                list.add(new QuanLy(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getInt(3)));
-            } while (cursor.moveToNext());
+        Cursor cursor = null;
+
+        try {
+            cursor = sqLiteDatabase.query("QUANLY", null, null, null, null, null, null);
+            if (cursor.moveToFirst()) {
+                do {
+                    list.add(new QuanLy(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getInt(4)));
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            sqLiteDatabase.close();
         }
-        cursor.close(); // Đóng con trỏ sau khi sử dụng
-        sqLiteDatabase.close(); // Đóng cơ sở dữ liệu sau khi sử dụng
+
         return list;
     }
 }

@@ -19,15 +19,11 @@ public class KhachHang {
         this.trangthaitk = trangthaitk;
     }
 
-    public KhachHang(int makh, String hoten, String taikhoan, String matkhau, String sdt, String diachi, String loaitaikhoan, int trangthaitk) {
+    public KhachHang(int makh, String hoten, String sdt, String diachi) {
         this.makh = makh;
         this.hoten = hoten;
-        this.taikhoan = taikhoan;
-        this.matkhau = matkhau;
         this.sdt = sdt;
         this.diachi = diachi;
-        this.loaitaikhoan = loaitaikhoan;
-        this.trangthaitk = trangthaitk;
     }
 
     public int getMakh() {

@@ -18,7 +18,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(dbLoaiGiay);
         String dbGiay = "CREATE TABLE GIAY(magiay integer PRIMARY KEY AUTOINCREMENT,tengiay text,hinhanh text,size integer,giaban integer,soluong integer,maloai integer references LOAIGIAY(maloai))";
         db.execSQL(dbGiay);
-        String dbCTDonHang = "CREATE TABLE CTDONHANG(madh integer PRIMARY KEY AUTOINCREMENT,makh integer references KHACHHANG(makh),magiay integer references GIAY(magiay),ngaydat text,trangthaidonhang integer,tongtien interger)";
+        String dbCTDonHang = "CREATE TABLE CTDONHANG(madh integer PRIMARY KEY AUTOINCREMENT,makh integer references KHACHHANG(makh),magiay integer references GIAY(magiay),ngaydat text,trangthaidonhang integer,tongtien integer,soluong integer)";
         db.execSQL(dbCTDonHang);
         String dbDonHang = "CREATE TABLE DONHANG(madh integer PRIMARY KEY AUTOINCREMENT,makh integer references KHACHHANG(makh),magiay integer references GIAY(magiay))";
         db.execSQL(dbDonHang);
@@ -29,7 +29,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO KHACHHANG VALUES (1,'test1','test1','123','0432987678','nhà 3 khu 2','user',1),(2,'test2','test2','123','0477894222','nhà 4 khu 2','user',0),(3,'test3','test1','123','0987092345','nhà 6 khu 2','user',1)");
         db.execSQL("INSERT INTO LOAIGIAY VALUES (1,'JORDAN',0),(2,'AF1',0),(3,'NEW',1)");
         db.execSQL("INSERT INTO GIAY VALUES (1,'AF1','avatar1',42,200,10,1),(2,'AIRMAX','avatar2',37,100,10,2),(3,'JORDAN1','avatar3',40,250,10,1),(4,'JORDAN','avatar4',40,300,10,1),(5,'AF2','avatar5',39,200,10,2),(6,'AF1','avatar6',44,200,10,1),(7,'AF12','avatar7',43,200,10,1),(8,'NIKE1','avatar8',42,200,10,2),(9,'AIRMIN','avatar9',38,900,17,2),(10,'AF123','avatar10',41,200,10,1),(11,'TRUNK','avatar11',40,400,10,1),(12,'JORDAN!','avatar12',39,200,10,2)");
-        db.execSQL("INSERT INTO CTDONHANG VALUES (1,1,1,'11/03/2023',0,2000000),(2,2,2,'14/03/2023',1,3000000),(3,1,1,'11/03/2023',0,2000000)");
+        db.execSQL("INSERT INTO CTDONHANG VALUES (1,1,1,'11/03/2023',0,2000000,1),(2,2,2,'14/03/2023',1,3000000,1),(3,1,1,'11/03/2023',0,2000000,1)");
         db.execSQL("INSERT INTO DONHANG VALUES (1,1,1),(2,2,2),(3,3,3)");
     }
 

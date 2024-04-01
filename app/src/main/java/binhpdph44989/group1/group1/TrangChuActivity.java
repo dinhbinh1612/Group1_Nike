@@ -17,8 +17,10 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
 
+import binhpdph44989.group1.group1.fragmentAdmin.QLDonHangFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLLoaIGiayFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLThanhVienFragment;
+import binhpdph44989.group1.group1.fragmentAdmin.QLTopFragment;
 
 public class TrangChuActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
@@ -49,7 +51,10 @@ public class TrangChuActivity extends AppCompatActivity {
                 }else if (menuItem.getItemId() == R.id.mGiay){
                 }else if (menuItem.getItemId() == R.id.mThanhVien){
                     fragment = new QLThanhVienFragment();
+                }else if (menuItem.getItemId() == R.id.mDonHang){
+                    fragment = new QLDonHangFragment();
                 }else if (menuItem.getItemId() == R.id.mTop){
+                    fragment = new QLTopFragment();
                 }else if (menuItem.getItemId() == R.id.mDoanhThu){
                 }else if (menuItem.getItemId() == R.id.mDoiMatKhau){
                 }else if (menuItem.getItemId() == R.id.mDangXuat){

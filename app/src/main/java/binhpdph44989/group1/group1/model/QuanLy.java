@@ -8,19 +8,11 @@ public class QuanLy {
     private String loaitaikhoan;
     private int trangthaitk;
 
-    public QuanLy(int maql, String hoten, String loaitaikhoan, int trangthaitk) {
-        this.maql = maql;
-        this.hoten = hoten;
-        this.loaitaikhoan = loaitaikhoan;
-        this.trangthaitk = trangthaitk;
-    }
-
-    public QuanLy(int maql, String hoten, String taikhoan, String matkhau, String loaitaikhoan, int trangthaitk) {
+    public QuanLy(int maql, String hoten, String taikhoan, String matkhau, int trangthaitk) {
         this.maql = maql;
         this.hoten = hoten;
         this.taikhoan = taikhoan;
         this.matkhau = matkhau;
-        this.loaitaikhoan = loaitaikhoan;
         this.trangthaitk = trangthaitk;
     }
 
