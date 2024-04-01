@@ -1,12 +1,14 @@
 package binhpdph44989.group1.group1.database;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DbHelper extends SQLiteOpenHelper {
     public DbHelper(Context context){
-        super(context,"NIKE",null,1);
+        super(context,"NIKE",null,6);
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -16,7 +18,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(dbKhachHang);
         String dbLoaiGiay = "CREATE TABLE LOAIGIAY(maloai integer PRIMARY KEY AUTOINCREMENT,  tenloai text, trangthailoai integer)";
         db.execSQL(dbLoaiGiay);
-        String dbGiay = "CREATE TABLE GIAY(magiay integer PRIMARY KEY AUTOINCREMENT,tengiay text,hinhanh text,size integer,giaban integer,soluong integer,maloai integer references LOAIGIAY(maloai))";
+        String dbGiay = "CREATE TABLE GIAY(magiay integer PRIMARY KEY AUTOINCREMENT,hinhanh text,tengiay text,size integer,giaban integer,soluong integer,maloai integer references LOAIGIAY(maloai))";
         db.execSQL(dbGiay);
         String dbCTDonHang = "CREATE TABLE CTDONHANG(madh integer PRIMARY KEY AUTOINCREMENT,makh integer references KHACHHANG(makh),magiay integer references GIAY(magiay),ngaydat text,trangthaidonhang integer,tongtien integer,soluong integer)";
         db.execSQL(dbCTDonHang);
@@ -47,4 +49,36 @@ public class DbHelper extends SQLiteOpenHelper {
             onCreate(db);
         }
     }
+    public boolean kiemTraDangNhap(String taiKhoan, String matKhau) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM QUANLY WHERE taikhoan=? AND matkhau=?", new String[]{taiKhoan, matKhau});
+
+        if (cursor.getCount() > 0) {
+            cursor.close();
+            return true;
+        } else {
+            cursor.close();
+            return false;
+        }
+    }
+    public void addUser(String hoTen, String sdt, String user, String diaChi, String matKhau) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("hoten", hoTen);
+        values.put("sdt", sdt);
+        values.put("taikhoan", user);
+        values.put("diachi", diaChi);
+        values.put("matkhau", matKhau);
+        // Chèn dữ liệu vào bảng KHACHHANG
+        db.insert("KHACHHANG", null, values);
+        db.close();
+    }
+    public void capNhatMatKhau(String taiKhoan, String matKhauMoi) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("matkhau", matKhauMoi);
+        db.update("QUANLY", values, "taikhoan=?", new String[]{taiKhoan});
+        db.close();
+    }
+
 }

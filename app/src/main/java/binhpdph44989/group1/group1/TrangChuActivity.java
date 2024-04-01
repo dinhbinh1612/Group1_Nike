@@ -1,5 +1,6 @@
 package binhpdph44989.group1.group1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,9 +19,11 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.navigation.NavigationView;
 
 import binhpdph44989.group1.group1.fragmentAdmin.QLDonHangFragment;
+import binhpdph44989.group1.group1.fragmentAdmin.QLGiayFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLLoaIGiayFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLThanhVienFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLTopFragment;
+import binhpdph44989.group1.group1.manHinh.DoiMatKhau;
 
 public class TrangChuActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
@@ -49,6 +52,7 @@ public class TrangChuActivity extends AppCompatActivity {
                 if (menuItem.getItemId() == R.id.mLoaiGiay) {
                     fragment = new QLLoaIGiayFragment();
                 }else if (menuItem.getItemId() == R.id.mGiay){
+                    fragment = new QLGiayFragment();
                 }else if (menuItem.getItemId() == R.id.mThanhVien){
                     fragment = new QLThanhVienFragment();
                 }else if (menuItem.getItemId() == R.id.mDonHang){
@@ -57,7 +61,9 @@ public class TrangChuActivity extends AppCompatActivity {
                     fragment = new QLTopFragment();
                 }else if (menuItem.getItemId() == R.id.mDoanhThu){
                 }else if (menuItem.getItemId() == R.id.mDoiMatKhau){
+                    fragment = new DoiMatKhau();
                 }else if (menuItem.getItemId() == R.id.mDangXuat){
+
                 }
                 if (fragment != null){
                     FragmentManager fragmentManager = getSupportFragmentManager();
