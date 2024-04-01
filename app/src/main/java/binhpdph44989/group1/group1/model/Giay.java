@@ -1,26 +1,31 @@
 package binhpdph44989.group1.group1.model;
 
 public class Giay {
+
     private int maGiay;
-    private String tenGiay;
     private String hinhAnh;
+    private String tenGiay;
+
 
     private int size;
     private int giaBan;
     private int soLuong;
 
-    public Giay(int maGiay, String tenGiay, String hinhAnh, int size, int giaBan, int soLuong) {
-        this.maGiay = maGiay;
-        this.tenGiay = tenGiay;
+    public Giay() {
+    }
+
+    public Giay(String hinhAnh, String tenGiay, int size, int giaBan, int soLuong) {
         this.hinhAnh = hinhAnh;
+        this.tenGiay = tenGiay;
         this.size = size;
         this.giaBan = giaBan;
         this.soLuong = soLuong;
     }
 
-    public Giay(String tenGiay, String hinhAnh, int size, int giaBan, int soLuong) {
-        this.tenGiay = tenGiay;
+    public Giay(int maGiay, String hinhAnh, String tenGiay, int size, int giaBan, int soLuong) {
+        this.maGiay = maGiay;
         this.hinhAnh = hinhAnh;
+        this.tenGiay = tenGiay;
         this.size = size;
         this.giaBan = giaBan;
         this.soLuong = soLuong;
@@ -34,20 +39,20 @@ public class Giay {
         this.maGiay = maGiay;
     }
 
-    public String getTenGiay() {
-        return tenGiay;
-    }
-
-    public void setTenGiay(String tenGiay) {
-        this.tenGiay = tenGiay;
-    }
-
     public String getHinhAnh() {
         return hinhAnh;
     }
 
     public void setHinhAnh(String hinhAnh) {
         this.hinhAnh = hinhAnh;
+    }
+
+    public String getTenGiay() {
+        return tenGiay;
+    }
+
+    public void setTenGiay(String tenGiay) {
+        this.tenGiay = tenGiay;
     }
 
     public int getSize() {

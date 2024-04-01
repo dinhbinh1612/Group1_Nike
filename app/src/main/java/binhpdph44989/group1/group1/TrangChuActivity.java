@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,14 +17,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 
 import binhpdph44989.group1.group1.fragmentAdmin.QLDonHangFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLGiayFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLLoaIGiayFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLThanhVienFragment;
+import binhpdph44989.group1.group1.fragmentAdmin.QLThongKeFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLTopFragment;
 import binhpdph44989.group1.group1.manHinh.DoiMatKhau;
+
+
 
 public class TrangChuActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
@@ -32,6 +37,10 @@ public class TrangChuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_chu);
+
+        ImageView ivLogo = findViewById(R.id.ivLogo);
+        Glide.with(this).load(R.drawable.g1).into(ivLogo);
+
 
         Toolbar toolbar = findViewById(R.id.toolBar);
         FrameLayout frameLayout = findViewById(R.id.frameLayout);
@@ -60,6 +69,7 @@ public class TrangChuActivity extends AppCompatActivity {
                 }else if (menuItem.getItemId() == R.id.mTop){
                     fragment = new QLTopFragment();
                 }else if (menuItem.getItemId() == R.id.mDoanhThu){
+                    fragment = new QLThongKeFragment();
                 }else if (menuItem.getItemId() == R.id.mDoiMatKhau){
                     fragment = new DoiMatKhau();
                 }else if (menuItem.getItemId() == R.id.mDangXuat){

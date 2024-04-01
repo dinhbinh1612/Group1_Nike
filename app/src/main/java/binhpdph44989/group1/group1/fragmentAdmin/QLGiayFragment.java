@@ -22,12 +22,12 @@ import java.util.ArrayList;
 import binhpdph44989.group1.group1.R;
 import binhpdph44989.group1.group1.adapterAdmin.GiayAdapter;
 import binhpdph44989.group1.group1.adapterAdmin.LoaiGiayAdapter;
-import binhpdph44989.group1.group1.dao.GiayDAO;
+import binhpdph44989.group1.group1.dao.GiayDao;
 import binhpdph44989.group1.group1.model.Giay;
 import binhpdph44989.group1.group1.model.LoaiGiay;
 
 public class QLGiayFragment extends Fragment {
-    GiayDAO giayDao;
+    GiayDao giayDao;
     RecyclerView recyclerViewGiay;
     GiayAdapter giayAdapter;
     @Nullable
@@ -36,7 +36,7 @@ public class QLGiayFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_ql_giay, container, false);
         FloatingActionButton floatAdd = view.findViewById(R.id.floatAddGiay);
         recyclerViewGiay = view.findViewById(R.id.recyclerGiay);
-        giayDao = new GiayDAO(getContext());
+        giayDao = new GiayDao(getContext());
         floatAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,8 +80,8 @@ public class QLGiayFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Lấy thông tin từ các EditText
-                String hinhAnh = edtHinhAnh.getText().toString();
                 String tenGiay = edtTenGiay.getText().toString();
+                String hinhAnh = edtHinhAnh.getText().toString();
                 int size = Integer.parseInt(edtSize.getText().toString());
                 int giaBan = Integer.parseInt(edtGiaBan.getText().toString());
                 int soLuong = Integer.parseInt(edtSoLuong.getText().toString());
@@ -89,10 +89,11 @@ public class QLGiayFragment extends Fragment {
                 // Tạo đối tượng Giay từ thông tin đã lấy
                 Giay giay = new Giay(hinhAnh, tenGiay, size, giaBan, soLuong);
 
+
+
                 // Thêm giày vào cơ sở dữ liệu bằng cách gọi phương thức themGiay trong GiayDAO
                 boolean isInserted = giayDao.themGiay(giay);
 
-                // Thêm giày vào cơ sở dữ liệu bằng cách gọi phương thức themGiay trong GiayDAO
                 if (isInserted) {
                     // Nếu thêm thành công, cập nhật lại RecyclerView hoặc thực hiện các hành động khác
                     loadData();

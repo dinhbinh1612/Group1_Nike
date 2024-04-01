@@ -28,8 +28,16 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+
             android:name=".manHinh.ManChao"
-            android:exported="true" >
+            android:exported="true" />
+            <activity
+            android:name=".MainActivityUser"
+            android:exported="false" />
+        <activity
+            android:name=".TrangChuActivity"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

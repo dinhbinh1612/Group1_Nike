@@ -20,13 +20,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import binhpdph44989.group1.group1.R;
-import binhpdph44989.group1.group1.dao.GiayDAO;
 import binhpdph44989.group1.group1.model.Giay;
 
 public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.ViewHolder>{
     private Context context;
     private ArrayList<Giay> giayList;
-    GiayDAO giayDao;
+    Giay giayDao;
     GiayAdapter giayAdapter;
 
     public GiayAdapter(Context context, ArrayList<Giay> giayList) {
