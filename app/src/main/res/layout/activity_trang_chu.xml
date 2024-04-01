@@ -11,11 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ddd"/>
+            android:background="#ddd" />
 
         <FrameLayout
             android:id="@+id/frameLayout"
@@ -28,8 +29,26 @@
         android:id="@+id/navigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:menu="@menu/menu_admin"
-        app:headerLayout="@layout/hearder_layout"
         android:layout_gravity="start"
-        />
+        app:headerLayout="@layout/hearder_layout"
+        app:menu="@menu/menu_admin" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chào mừng bạn đến với NIKE shop" />
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/g1"/>
+    </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
