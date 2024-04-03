@@ -14,45 +14,52 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!-- TabWidget để hiển thị các tab -->
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- FrameLayout để chứa nội dung của các tab -->
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
+                <!-- Tab content của tab1 -->
                 <LinearLayout
                     android:id="@+id/tab1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-
-                    <TabWidget
-                        android:id="@android:id/tabs"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                    <include layout="@layout/layout1" />
                 </LinearLayout>
 
+                <!-- Tab content của tab2 -->
                 <LinearLayout
                     android:id="@+id/tab2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-
+                    <include layout="@layout/layout2" />
                 </LinearLayout>
 
+                <!-- Tab content của tab3 -->
                 <LinearLayout
                     android:id="@+id/tab3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"></LinearLayout>
 
-                </LinearLayout>
-
+                <!-- Tab content của tab4 -->
                 <LinearLayout
                     android:id="@+id/tab4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"></LinearLayout>
 
+                <!-- Tab content của tab5 -->
                 <LinearLayout
                     android:id="@+id/tab5"
                     android:layout_width="match_parent"
