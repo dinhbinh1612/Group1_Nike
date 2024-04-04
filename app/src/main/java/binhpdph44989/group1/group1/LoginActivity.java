@@ -59,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
     private boolean checkLoginAndNavigate(String taiKhoan, String matKhau) {
         boolean result = dbHelper.kiemTraDangNhap(taiKhoan, matKhau); // Gọi phương thức kiểm tra đăng nhập từ DbHelper
 
@@ -83,6 +84,8 @@ public class LoginActivity extends AppCompatActivity {
                 // Xử lý khi loaiTaiKhoan là null (để ghi log hoặc thông báo lỗi)
                 Toast.makeText(LoginActivity.this, "Không thể xác định loại tài khoản", Toast.LENGTH_SHORT).show();
             }
+        }else {
+            Toast.makeText(this, "Kiểm tra lại tài khoản mật khẩu ", Toast.LENGTH_SHORT).show();
         }
         return false;
     }

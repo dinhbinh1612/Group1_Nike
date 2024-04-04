@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,10 +17,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 
-import binhpdph44989.group1.group1.fragmentAdmin.QLDonHang;
 import binhpdph44989.group1.group1.fragmentAdmin.QLDonHangFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLGiayFragment;
 import binhpdph44989.group1.group1.fragmentAdmin.QLLoaIGiayFragment;
@@ -38,9 +35,9 @@ public class TrangChuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_chu);
-
-        ImageView ivLogo = findViewById(R.id.ivLogo);
-        Glide.with(this).load(R.drawable.g1).into(ivLogo);
+//
+//        ImageView ivLogo = findViewById(R.id.ivLogo);
+//        Glide.with(this).load(R.drawable.g1).into(ivLogo);
 
 
         Toolbar toolbar = findViewById(R.id.toolBar);
@@ -87,7 +84,7 @@ public class TrangChuActivity extends AppCompatActivity {
                 return false;
             }
         });
-        SharedPreferences sharedPreferences = getSharedPreferences("THONGTIN",MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("QUANLY",MODE_PRIVATE);
         String hoten = sharedPreferences.getString("hoten","");
         txtTen.setText("Xin chào, "+ hoten);
     }

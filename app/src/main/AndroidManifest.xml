@@ -24,7 +24,7 @@
             android:name=".manHinh.ManDangKy"
             android:exported="false" />
         <activity
-            android:name=".TrangChuActivity"
+            android:name=".manHinh.ManChao"
             android:exported="false" />
         <activity
             android:name=".activity.TKQuanLyActivity"
@@ -34,7 +34,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".manHinh.ManChao"
+            android:name=".TrangChuActivity"
             android:exported="true">
 
             <intent-filter>
