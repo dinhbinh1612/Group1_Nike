@@ -21,11 +21,11 @@ import java.util.ArrayList;
 
 import binhpdph44989.group1.group1.R;
 import binhpdph44989.group1.group1.adapterAdmin.GiayAdapter;
-import binhpdph44989.group1.group1.dao.GiayDao;
+import binhpdph44989.group1.group1.dao.GiayDAO;
 import binhpdph44989.group1.group1.model.Giay;
 
 public class QLGiayFragment extends Fragment {
-    GiayDao giayDao;
+    GiayDAO giayDao;
     RecyclerView recyclerViewGiay;
     GiayAdapter giayAdapter;
     @Nullable
@@ -34,7 +34,7 @@ public class QLGiayFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_ql_giay, container, false);
         FloatingActionButton floatAdd = view.findViewById(R.id.floatAddGiay);
         recyclerViewGiay = view.findViewById(R.id.recyclerGiay);
-        giayDao = new GiayDao(getContext());
+        giayDao = new GiayDAO(getContext());
         floatAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
