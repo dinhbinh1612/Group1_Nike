@@ -16,10 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import binhpdph44989.group1.group1.fragmentUser.DonHangFragment;
-import binhpdph44989.group1.group1.fragmentUser.GioHangFragment;
-import binhpdph44989.group1.group1.fragmentUser.HomeFragmentUser;
-import binhpdph44989.group1.group1.fragmentUser.SettingFragment;
+
 
 public class MainActivityUser extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
@@ -37,21 +34,21 @@ public class MainActivityUser extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int menuId = menuItem.getItemId();
                 if (menuId == R.id.mnHome) {
-                    loadFragment(new HomeFragmentUser(), false);
+//                    loadFragment(new HomeFragmentUser(), false);
                 }
 
                 else if (menuId == R.id.mnCart) {
-                    loadFragment(new GioHangFragment(), false);
+//                    loadFragment(new GioHangFragment(), false);
                 } else if (menuId == R.id.mnOrder) {
-                    loadFragment(new DonHangFragment(), false);
+//                    loadFragment(new DonHangFragment(), false);
                 } else if (menuId == R.id.mnSetting) {
-                    loadFragment(new SettingFragment(), false);
+//                    loadFragment(new SettingFragment(), false);
                 }
 
                 return true;
             }
         });
-        loadFragment(new HomeFragmentUser(),true);
+//        loadFragment(new HomeFragmentUser(),true);
 
     }
 

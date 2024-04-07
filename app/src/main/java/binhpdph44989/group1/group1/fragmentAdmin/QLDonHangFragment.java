@@ -16,10 +16,8 @@ import java.util.ArrayList;
 
 import binhpdph44989.group1.group1.R;
 import binhpdph44989.group1.group1.adapterAdmin.DonHangAdapter;
-import binhpdph44989.group1.group1.adapterAdmin.LoaiGiayAdapter;
 import binhpdph44989.group1.group1.dao.DonHangDAO;
 import binhpdph44989.group1.group1.model.DonHang;
-import binhpdph44989.group1.group1.model.LoaiGiay;
 
 public class QLDonHangFragment extends Fragment {
     DonHangDAO donHangDAO;

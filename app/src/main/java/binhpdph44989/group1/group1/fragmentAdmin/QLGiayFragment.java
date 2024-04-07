@@ -21,10 +21,8 @@ import java.util.ArrayList;
 
 import binhpdph44989.group1.group1.R;
 import binhpdph44989.group1.group1.adapterAdmin.GiayAdapter;
-import binhpdph44989.group1.group1.adapterAdmin.LoaiGiayAdapter;
 import binhpdph44989.group1.group1.dao.GiayDao;
 import binhpdph44989.group1.group1.model.Giay;
-import binhpdph44989.group1.group1.model.LoaiGiay;
 
 public class QLGiayFragment extends Fragment {
     GiayDao giayDao;

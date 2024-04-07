@@ -1,5 +1,6 @@
 package binhpdph44989.group1.group1.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -33,5 +34,21 @@ public class GiayDao {
         }
         cursor.close();
         return list;
+    }
+    public boolean themGiay(Giay giay) {
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("tengiay", giay.getTenGiay());
+        values.put("hinhanh", giay.getHinhAnh());
+        values.put("giaban", giay.getGiaBan());
+        values.put("soluong", giay.getSoLuong());
+        values.put("size", giay.getSize());
+
+        // Thực hiện việc chèn dữ liệu vào bảng GIAY
+        long result = db.insert("GIAY", null, values);
+        db.close();
+
+        // Kiểm tra kết quả và trả về true nếu thêm thành công, ngược lại trả về false
+        return result != -1;
     }
 }

@@ -1,7 +1,6 @@
 package binhpdph44989.group1.group1.fragmentAdmin;
 
 import android.content.Intent;
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
