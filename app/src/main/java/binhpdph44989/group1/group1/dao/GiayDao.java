@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import binhpdph44989.group1.group1.database.DbHelper;
 import binhpdph44989.group1.group1.model.Giay;
 
-public class GiayDao {
+public class GiayDAO {
     DbHelper dbhelper;
-    public GiayDao(Context context){dbhelper = new DbHelper(context);}
+    public GiayDAO(Context context){dbhelper = new DbHelper(context);}
     public ArrayList<Giay>getDSGiay(){
         ArrayList<Giay>list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = dbhelper.getReadableDatabase();
