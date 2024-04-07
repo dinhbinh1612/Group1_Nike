@@ -1,58 +1,114 @@
 package binhpdph44989.group1.group1.model;
 
-public class Giay {
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    private int maGiay;
-    private String hinhAnh;
-    private String tenGiay;
+import androidx.annotation.NonNull;
 
-
+public class Giay implements Parcelable {
+    private int magiay;
+    private String tengiay;
+    private String hinhanh;
     private int size;
-    private int giaBan;
-    private int soLuong;
+    private int giaban;
+    private  int soluong;
+    private int maloai;
+
+
+
+
+
+    protected Giay(Parcel in) {
+        magiay = in.readInt();
+        tengiay = in.readString();
+        hinhanh = in.readString();
+        size = in.readInt();
+        giaban = in.readInt();
+        soluong = in.readInt();
+        maloai = in.readInt();
+
+    }
+
+    public static final Creator<Giay> CREATOR = new Creator<Giay>() {
+        @Override
+        public Giay createFromParcel(Parcel in) {
+            return new Giay(in);
+        }
+
+        @Override
+        public Giay[] newArray(int size) {
+            return new Giay[size];
+        }
+    };
+
+    public Giay(int magiay, String tengiay, String hinhanh, int size, int giaban, int soluong) {
+        this.magiay = magiay;
+        this.tengiay = tengiay;
+        this.hinhanh = hinhanh;
+        this.size = size;
+        this.giaban = giaban;
+        this.soluong = soluong;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeInt(magiay);
+        dest.writeString(tengiay);
+        dest.writeString(hinhanh);
+        dest.writeInt(size);
+        dest.writeInt(giaban);
+        dest.writeInt(soluong);
+        dest.writeInt(maloai);
+    }
 
     public Giay() {
     }
 
-    public Giay(String hinhAnh, String tenGiay, int size, int giaBan, int soLuong) {
-        this.hinhAnh = hinhAnh;
-        this.tenGiay = tenGiay;
+    public Giay(String tengiay, String hinhanh, int size, int giaban, int soluong) {
+        this.tengiay = tengiay;
+        this.hinhanh = hinhanh;
         this.size = size;
-        this.giaBan = giaBan;
-        this.soLuong = soLuong;
+        this.giaban = giaban;
+        this.soluong = soluong;
     }
 
-    public Giay(int maGiay, String hinhAnh, String tenGiay, int size, int giaBan, int soLuong) {
-        this.maGiay = maGiay;
-        this.hinhAnh = hinhAnh;
-        this.tenGiay = tenGiay;
+    public Giay(int magiay, String tengiay, String hinhanh, int size, int giaban, int soluong, int maloai) {
+        this.magiay = magiay;
+        this.tengiay = tengiay;
+        this.hinhanh = hinhanh;
         this.size = size;
-        this.giaBan = giaBan;
-        this.soLuong = soLuong;
+        this.giaban = giaban;
+        this.soluong = soluong;
+        this.maloai = maloai;
     }
 
-    public int getMaGiay() {
-        return maGiay;
+    public int getMagiay() {
+        return magiay;
     }
 
-    public void setMaGiay(int maGiay) {
-        this.maGiay = maGiay;
+    public void setMagiay(int magiay) {
+        this.magiay = magiay;
     }
 
-    public String getHinhAnh() {
-        return hinhAnh;
+    public String getTengiay() {
+        return tengiay;
     }
 
-    public void setHinhAnh(String hinhAnh) {
-        this.hinhAnh = hinhAnh;
+    public void setTengiay(String tengiay) {
+        this.tengiay = tengiay;
     }
 
-    public String getTenGiay() {
-        return tenGiay;
+    public String getHinhanh() {
+        return hinhanh;
     }
 
-    public void setTenGiay(String tenGiay) {
-        this.tenGiay = tenGiay;
+    public void setHinhanh(String hinhanh) {
+        this.hinhanh = hinhanh;
     }
 
     public int getSize() {
@@ -63,19 +119,40 @@ public class Giay {
         this.size = size;
     }
 
-    public int getGiaBan() {
-        return giaBan;
+    public int getGiaban() {
+        return giaban;
     }
 
-    public void setGiaBan(int giaBan) {
-        this.giaBan = giaBan;
+    public void setGiaban(int giaban) {
+        this.giaban = giaban;
     }
 
-    public int getSoLuong() {
-        return soLuong;
+    public int getSoluong() {
+        return soluong;
     }
 
-    public void setSoLuong(int soLuong) {
-        this.soLuong = soLuong;
+    public void setSoluong(int soluong) {
+        this.soluong = soluong;
     }
+
+    public int getMaloai() {
+        return maloai;
+    }
+
+    public void setMaloai(int maloai) {
+        this.maloai = maloai;
+    }
+
+    private boolean isSelected;
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public boolean setSelected(boolean selected) {
+        isSelected = selected;
+        return selected;
+    }
+
+
 }

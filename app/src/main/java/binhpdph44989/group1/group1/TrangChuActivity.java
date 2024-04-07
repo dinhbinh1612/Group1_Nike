@@ -19,9 +19,17 @@ import androidx.fragment.app.FragmentManager;
 import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 
+<<<<<<< HEAD
 import binhpdph44989.group1.group1.fragmentAdmin.QLGiayFragment;
 import binhpdph44989.group1.group1.manHinh.DoiMatKhau;
 
+=======
+import binhpdph44989.group1.group1.fragmentAdmin.QLDonHangFragment;
+import binhpdph44989.group1.group1.fragmentAdmin.QLLoaIGiayFragment;
+import binhpdph44989.group1.group1.fragmentAdmin.QLThanhVienFragment;
+import binhpdph44989.group1.group1.fragmentAdmin.QLThongKeFragment;
+import binhpdph44989.group1.group1.fragmentAdmin.QLTopFragment;
+>>>>>>> origin/develop1
 
 
 public class TrangChuActivity extends AppCompatActivity {
@@ -55,7 +63,7 @@ public class TrangChuActivity extends AppCompatActivity {
                 if (menuItem.getItemId() == R.id.mLoaiGiay) {
 
                 }else if (menuItem.getItemId() == R.id.mGiay){
-                    fragment = new QLGiayFragment();
+
                 }else if (menuItem.getItemId() == R.id.mThanhVien){
 
                 }else if (menuItem.getItemId() == R.id.mDonHang){

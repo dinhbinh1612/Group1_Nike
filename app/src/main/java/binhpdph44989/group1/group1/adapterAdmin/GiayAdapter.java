@@ -1,20 +1,13 @@
 package binhpdph44989.group1.group1.adapterAdmin;
 
-import static java.security.AccessController.getContext;
-
-import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -44,13 +37,13 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.ViewHolder>{
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Giay giay = giayList.get(position);
 
-        holder.tvMaGiay.setText("Mã giày: " + giay.getMaGiay());
-        holder.tvTenGiay.setText("Tên giày: " + giay.getTenGiay());
-        holder.tvGiaBan.setText("Giá bán: " + giay.getGiaBan() + " VNĐ");
-        holder.tvSoLuong.setText("Số lượng: " + giay.getSoLuong());
+        holder.tvMaGiay.setText("Mã giày: " + giay.getMagiay());
+        holder.tvTenGiay.setText("Tên giày: " + giay.getTengiay());
+        holder.tvGiaBan.setText("Giá bán: " + giay.getGiaban() + " VNĐ");
+        holder.tvSoLuong.setText("Số lượng: " + giay.getSoluong());
         holder.tvSize.setText("Size: " + giay.getSize());
 
-        int resID = context.getResources().getIdentifier(giay.getHinhAnh(), "drawable", context.getPackageName());
+        int resID = context.getResources().getIdentifier(giay.getHinhanh(), "drawable", context.getPackageName());
         holder.imgAnhGiay.setImageResource(resID);
 
 //        holder.imgSua.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +66,7 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.ViewHolder>{
         TextView tvMaGiay, tvTenGiay, tvGiaBan, tvSoLuong, tvSize;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgAnhGiay = itemView.findViewById(R.id.imgAnhGiay);
+            imgAnhGiay = itemView.findViewById(R.id.imgGiay);
             tvMaGiay = itemView.findViewById(R.id.tvMaGiay);
             tvTenGiay = itemView.findViewById(R.id.tvTenGiay);
             tvGiaBan = itemView.findViewById(R.id.tvGiaBan);
